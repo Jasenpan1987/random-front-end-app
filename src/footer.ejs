@@ -1,0 +1,16 @@
+<!-- Standard Footer Insert -->
+
+<% include dropins/google-tag-manager.ejs %>
+
+<!-- Packed Javascript includes -->
+<!--
+<% for (chunk in htmlWebpackPlugin.files.chunks) { %>
+    <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+<% } %>
+-->
+
+<script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+
+<!-- End Packed Javascript includes -->
+
+<!-- End Standard Footer Insert -->

@@ -1,0 +1,15 @@
+{
+  "endpoints" : {
+    "login" : "/listings/login?redirectUrl=/&isAbsolute=true",
+    "listings" : "/listings",
+    "purchase" : "/purchase"
+  },
+  "firebase" : {
+    "apiKey" : "AIzaSyBMmSWwJRFgTpQJQ7co_CHDHypoWmmVkUY",
+    "authDomain" : "teg-immensely-glowing-chimp.firebaseapp.com",
+    "databaseURL" : "https://teg-immensely-glowing-chimp.firebaseio.com",
+    "projectId" : "teg-immensely-glowing-chimp",
+    "storageBucket" : "",
+    "messagingSenderId" : "414195969861"
+  }
+}

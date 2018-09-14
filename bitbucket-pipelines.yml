@@ -1,0 +1,50 @@
+pipelines:
+  default: 
+  - parallel: &buildstep        
+    - step:
+        name: node test
+        caches:
+        - node
+        image: node:8
+        script:
+        - npm rebuild
+        - export PATH="node_modules/.bin:$PATH"
+        - npm test
+        - if [ ! -z "$(echo $(eval echo \${${BITBUCKET_BRANCH}_MARKETPLACE_PROJECT_CONFIG_JSON}))" ] || ! echo "${BITBUCKET_BRANCH}" | grep '^[a-zA-Z_]*$' ; then echo "$(eval echo \${${BITBUCKET_BRANCH}_MARKETPLACE_PROJECT_CONFIG_JSON})" > project_config.json ; export MARKETPLACE_PROJECT_CONFIG_FILE="./project_config.json" ; fi
+        - npm run build
+        artifacts:
+        - dist/**
+      
+  branches:
+    master: 
+    - parallel: *buildstep 
+    - step: &deployStep
+        name: Deploy 
+        image: mirror.gcr.io/google/cloud-sdk:latest
+        script: 
+        - if [ -z "$(eval echo \${${BITBUCKET_BRANCH}_PROJECT_ID})" ] || ! echo "${BITBUCKET_BRANCH}" | grep '^[a-zA-Z_]*$' ; then echo "Missing ${BITBUCKET_BRANCH}_PROJECT_ID} environment variable" ; exit 1 ; fi
+        - if [ -z "$(echo $(eval echo \${${BITBUCKET_BRANCH}_MARKETPLACE_PROJECT_CONFIG_JSON}))" ] || ! echo "${BITBUCKET_BRANCH}" | grep '^[a-zA-Z_]*$' ; then echo "Missing ${BITBUCKET_BRANCH}_MARKETPLACE_PROJECT_CONFIG_JSON environment variable" ; exit 1 ; fi
+        # Standard variable setup
+        - export PROJECT_ID=$(eval echo \${${BITBUCKET_BRANCH}_PROJECT_ID})
+        - export CLOUDSDK_CORE_PROJECT=$PROJECT_ID
+        - export CLOUDSDK_CORE_DISABLE_PROMPTS=1
+        # Deploy variable setup.
+        - echo "$GCP_SERVICE_ACCOUNT_JSON" > .deploy.service-account.json
+        - gcloud auth activate-service-account $GCP_SERVICE_ACCOUNT_NAME --key-file=.deploy.service-account.json
+        # This is a dummy call for homepage.
+        #- utils/endpoints-to-appyaml.py $CLOUDSDK_CORE_PROJECT.appspot.com endpoints.json app.yaml
+        - export VERSION=$(date -u +%Y%m%dt%H%M%S)-$(git rev-parse --short=7 HEAD)
+        - cd dist
+        - gcloud --verbosity=info app deploy --promote --version="$VERSION" app.yaml
+    demo: 
+    - parallel: *buildstep 
+    - step: *deployStep
+    test: 
+    - parallel: *buildstep 
+    - step: *deployStep
+    dev_yicheng: 
+    - parallel: *buildstep 
+    - step: *deployStep
+    dev_suren: 
+    - parallel: *buildstep 
+    - step: *deployStep

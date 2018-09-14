@@ -1,0 +1,15 @@
+{
+  "endpoints" : {
+    "login" : "https://dev.resale.teg.technology/listings/login?redirectUrl=http%3A%2F%2Flocalhost%3A8080%2F&isAbsolute=true",
+    "listings" : "https://dev.resale.teg.technology/listings",
+    "purchase" : "https://dev.resale.teg.technology/purchase"
+  },
+  "firebase" : {
+    "apiKey" : "AIzaSyBMmSWwJRFgTpQJQ7co_CHDHypoWmmVkUY",
+    "authDomain" : "teg-immensely-glowing-chimp.firebaseapp.com",
+    "databaseURL" : "https://teg-immensely-glowing-chimp.firebaseio.com",
+    "projectId" : "teg-immensely-glowing-chimp",
+    "storageBucket" : "",
+    "messagingSenderId" : "414195969861"
+  }
+}

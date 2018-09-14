@@ -1,0 +1,11 @@
+# Webpack outputs here.
+node_modules/
+/dist
+!/dist/.gitkeep
+
+# Ignore .cache files under node_modules
+.cache
+/node_modules/webpack-dev-server/ssl
+
+# IDEs
+/.idea

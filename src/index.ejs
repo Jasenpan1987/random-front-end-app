@@ -1,0 +1,160 @@
+<!doctype html>
+<html class="no-js" lang="en">
+   <%# Load the inlined project config %>
+   <% const projectConfig = MARKETPLACE_PROJECT_CONFIG; %>
+   <head>
+      <!-- Include Header -->
+      <% include header.ejs %>
+   </head>
+   <body>
+      <% include ./dropins/google-tag-manager-noscript.ejs %>
+      <header class="header" style="background-image:url(<%- require("./static/images/bg.png") %>);background-size: cover;">
+        <div class="header-content">
+            <!-- top nav bar start -->
+            <div class="header-top-row-container">
+                <div class="brand-logo-wrapper">
+                    <a href="/">
+                        <img class="brand-logo" src="<%- require("./static/images/logo.png") %>" alt="brand logo" >
+                    </a>
+                </div>
+                
+                <a href="<%= projectConfig.endpoints.listings %>" class="btn btn-primary sell-tickets-link">SELL YOUR TICKETS</a>
+                
+                <div class="header-dropdown">
+                    <i class="fa fa-user-circle fa-lg d-none"></i>
+                    <a href="<%= projectConfig.endpoints.login %>" target="_self" class="header-login-text" id="headerSigninBtn">
+                        Login Or Signup
+                    </a>
+                    <i class="fa fa-chevron-down d-none"></i>
+                    <div class="header-dropdown-container">
+                        <ul class="header-dropdown-content">                          
+                            <li>
+                                <a href="<%= projectConfig.endpoints.login %>" target="_self"  id="ddlSigninBtn">
+                                    Sign In/Sign Up
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- top nav bar ended -->
+
+            <!-- top banner bar start -->
+            <div class="search-container">
+               <form class="form">
+                  <div class="input-group">
+                    <input type="text" name="searchBar" id="searchBar"
+                        placeholder="Search for an artist, event, or venue"
+                        class="form-control search-input"
+                    >
+                     <div class="input-group-append">
+                        <span class="input-group-text"><i class="fa fa-search"></i></span>
+                     </div>
+                  </div>
+               </form>
+            </div>
+            <!-- top banner bar ended -->
+         </div>
+      </header>
+      <!-- div for content tiles -->
+      <!-- <div style="width:100%; padding-top: 48px; padding-bottom: 48px;"> 
+         <%# include content-list.ejs %>
+      </div>-->
+      <!-- div for ticket summary -->
+      <!-- <div style="background-image:url(<%- require("./static/images/ticket-summary.jpg") %>);width:100%;height:297px;display:inline-block;vertical-align:middle;text-align: center;" id="container-ticket-summary">
+        <div style="width:100%;">
+            <div class="container" style="text-align: center;">
+                  <div class="row">
+                      <div class="col" style="text-align: center; ">
+                            <div style="height: 47px;font-size: 35px; color: #ffffff; font-weight: bold; padding-top: 50px; padding-bottom: 30px;">Sell your tickets in 3 easy steps</div> 
+                      </div>
+                  </div>
+                  <div class="row" style="margin-bottom:30px;">
+                     <div class="col" style="padding-top:50px;">
+                        <a href="<%= projectConfig.endpoints.listingsEndpoint %>" class="ticket-clickable-link">
+                           <div>
+                                <div class="ticket-summary" style="height: 77px;">
+                                        <div style="display: inline-block;color: white; width: 87px; vertical-align: top; margin-top: 10px;"><i class="fas fa-ticket-alt fa-4x"></i></div>
+                                        <div style="display: inline-block; color: #ffffff; width: 238px; text-align: left;">
+                                            <div style="height: 34px; font-weight: bold; font-size: 25px;">List your tickets</div>
+                                            <div style="height: 77px; overflow: hidden; font-size: 14px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint dolores suscipit, ex voluptas non exercitationem vitae, nostrum officiis expedita ullam, aspernatur commodi accusantium quas quibusdam autem vero libero incidunt magni.</div>
+                                        </div>
+                                     </div>
+                           </div>
+                        </a>
+                     </div>
+                     <div class="col" style="padding-top:50px;">
+                        <a href="<%= projectConfig.endpoints.purchase %>" class="ticket-clickable-link">
+                           <div>
+                                <div class="ticket-summary" style="height: 77px;">
+                                        <div style="display: inline-block;color: white; width: 87px; vertical-align: top; margin-top: 10px;"><i class="fas fa-check fa-4x"></i></div>
+                                        <div style="display: inline-block; color: #ffffff; width: 238px; text-align: left;">
+                                            <div style="height: 34px; font-weight: bold; font-size: 25px;">Purchase ticket</div>
+                                            <div style="height: 77px; overflow: hidden; font-size: 14px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint dolores suscipit, ex voluptas non exercitationem vitae, nostrum officiis expedita ullam, aspernatur commodi accusantium quas quibusdam autem vero libero incidunt magni.</div>
+                                        </div>
+                                     </div>
+                           </div>
+                        </a>
+                     </div>
+                     <div class="col" style="padding-top:50px;">
+                        <a href="#" class="ticket-clickable-link">
+                           <div>
+                                <div class="ticket-summary" style="height: 77px;">
+                                        <div style="display: inline-block;color: white; width: 87px; vertical-align: top; margin-top: 10px;"><i class="fas fa-dollar-sign fa-4x"></i></div>
+                                        <div style="display: inline-block; color: #ffffff; width: 238px; text-align: left;">
+                                            <div style="height: 34px; font-weight: bold; font-size: 25px;">Get Paid!</div>
+                                            <div style="height: 77px; overflow: hidden; font-size: 14px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint dolores suscipit, ex voluptas non exercitationem vitae, nostrum officiis expedita ullam, aspernatur commodi accusantium quas quibusdam autem vero libero incidunt magni.</div>
+                                        </div>
+                                     </div>
+                           </div>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div> -->
+      <!-- div for footer -->
+      <!--<div class="footer">
+        <div class="container-fluid">
+           <div class="row">
+               <div class="col-12 list-container order-1 order-md-0">
+                   <div class="row">
+                       <div class="text-left col col-md-3 col-6">About Ticketek Marketplace</div>
+                       <div class="text-left col col-md-3 col-6">How to buy tickets</div>
+                       <div class="text-left col col-md-3 col-6">Buyer agreement</div>
+                       <div class="text-left col col-md-3 col-6">Ticketek Australia</div>
+                       <div class="text-left col col-md-3 col-6">My account</div>
+                       <div class="text-left col col-md-3 col-6">How to sell my tickets</div>
+                       <div class="text-left col col-md-3 col-6">Seller agreement</div>
+                       <div class="text-left col col-md-3 col-6">Ticketek New Zealand</div>
+                       <div class="text-left col col-md-3 col-6">Ticketek Newsletter</div>
+                       <div class="text-left col col-md-3 col-6">Security</div>
+                       <div class="text-left col col-md-3 col-6">Terms &amp; Conditions</div>
+                       <div class="text-left col col-md-3 col-6">TEG Live</div>
+                       <div class="text-left col col-md-3 col-6">Contact Us</div>
+                       <div class="text-left col col-md-3 col-6">Help and FAQs</div>
+                       <div class="text-left col col-md-3 col-6">Privacy Policy</div>
+                       <div class="text-left col col-md-3 col-6">TEG Rewards</div>
+                   </div>
+               </div>
+                <div class="col-md-8 col-xs-12 float-left order-2 order-md-1" style="display: inline-block;">@2016
+                   Ticketek Pty Ltd (ABN 92 010 129 110) All rights reserved. Version 18.02.01
+                </div>
+                <div class="col-md-4 col-xs-12 order-0 order-md-2">
+                    <div class="row justify-content-center mb-4 mb-md-0">
+                        <div class="icons-container">
+                            <i class="fa fa-facebook-square icons"></i>
+                            <i class="fa fa-twitter-square icons"></i>
+                            <i class="fa fa-youtube-play icons"></i>
+                            <i class="fa fa-instagram icons"></i>
+                        </div>
+                    </div>
+               </div>
+           </div>
+       </div>
+   </div> -->
+      <!-- Footer Content -->
+      <% include footer.ejs %>
+      <% include dropins/appdynamics.ejs %>
+   </body>
+</html>

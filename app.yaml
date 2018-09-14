@@ -1,0 +1,22 @@
+# This minimal appengine app does nothing but serve static files.
+# The webpack build templates it to the dist/ directory and it is deployed from there.
+service: default
+
+runtime: python27
+api_version: 1
+threadsafe: true
+
+builtins: []
+
+libraries: []
+
+handlers:
+- url: /
+  static_files: index.html
+  upload: index.html
+  secure: always
+
+- url: /(.*)
+  static_files: \1
+  upload: (.*)
+  secure: always

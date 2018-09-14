@@ -1,0 +1,15 @@
+{
+  "endpoints" : {
+    "login" : "/listings/login?redirectUrl=/&isAbsolute=true",
+    "listings" : "/listings",
+    "purchase" : "/purchase"
+  },
+  "firebase" : {
+    "apiKey": "AIzaSyBxA4x6PGRzDPqVLqk6GcYej97K5C9ef2E",
+    "authDomain": "teg-blatantly-infinite-emu.firebaseapp.com",
+    "databaseURL": "https://teg-blatantly-infinite-emu.firebaseio.com",
+    "projectId": "teg-blatantly-infinite-emu",
+    "storageBucket": "teg-blatantly-infinite-emu.appspot.com",
+    "messagingSenderId": "903335191418"
+  }
+}
