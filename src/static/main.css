@@ -43,7 +43,7 @@ body {
 
 .header-content {
   padding: 78px 150px 95px 150px; }
-  @media (min-width: 767.98px) and (max-width: 991.98px) {
+  @media (min-width: 576px) and (max-width: 991.98px) {
     .header-content {
       padding: 54px 40px 57px 40px; } }
   @media (max-width: 575.98px) {
@@ -89,14 +89,22 @@ body {
         height: 60px; } }
   .header-top-row-container .header-dropdown {
     order: 3;
+    height: 40px;
+    width: 200px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    margin-left: 40px; }
+    margin-left: 40px;
+    padding-left: 15px;
+    border-top-left-radius: 8%;
+    border-top-right-radius: 8%; }
     @media (max-width: 767.98px) {
       .header-top-row-container .header-dropdown {
         order: 2;
         margin-left: 0; } }
+    @media (max-width: 767.98px) {
+      .header-top-row-container .header-dropdown {
+        width: 150px; } }
     .header-top-row-container .header-dropdown * {
       font-size: 15px;
       color: #fff;
@@ -120,19 +128,52 @@ body {
       list-style-type: none;
       color: white;
       border-top: 1px solid white;
-      width: 150px;
+      width: 200px;
       padding: 10px;
-      text-align: right; }
+      text-align: left; }
     .header-top-row-container .header-dropdown .header-dropdown-container {
       padding: 0;
       margin: 0; }
       .header-top-row-container .header-dropdown .header-dropdown-container .header-dropdown-content {
         display: none;
         position: absolute;
+        right: 150px;
+        top: 134px;
         padding: 0 !important;
         margin: 0 !important;
-        width: 150px;
+        width: 200px;
+        background-color: white;
+        border: 1px solid #e1e2e4;
+        border-bottom-left-radius: 5%;
+        border-bottom-right-radius: 5%;
         z-index: 100; }
+        @media (min-width: 768px) and (max-width: 991.98px) {
+          .header-top-row-container .header-dropdown .header-dropdown-container .header-dropdown-content {
+            right: 40px;
+            top: 104px; } }
+        @media (min-width: 576px) and (max-width: 767.98px) {
+          .header-top-row-container .header-dropdown .header-dropdown-container .header-dropdown-content {
+            right: 290px;
+            top: 192px; } }
+        @media (max-width: 576px) {
+          .header-top-row-container .header-dropdown .header-dropdown-container .header-dropdown-content {
+            right: 16.5px;
+            top: 66px; } }
+        .header-top-row-container .header-dropdown .header-dropdown-container .header-dropdown-content li {
+          border-top: 1px solid #e1e2e4; }
+          .header-top-row-container .header-dropdown .header-dropdown-container .header-dropdown-content li a,
+          .header-top-row-container .header-dropdown .header-dropdown-container .header-dropdown-content li i {
+            color: #212529;
+            padding-left: 10px; }
+  .header-top-row-container .header-dropdown:hover {
+    background-color: white;
+    border: 1px solid #e1e2e4; }
+    .header-top-row-container .header-dropdown:hover a,
+    .header-top-row-container .header-dropdown:hover i {
+      color: #212529; }
+    .header-top-row-container .header-dropdown:hover .header-dropdown-content {
+      display: block;
+      z-index: 999; }
 
 /* row left ended*/
 /* header-top-rows ended */
@@ -272,16 +313,15 @@ body {
       .ticket-summary .ticket-summary-item .ticket-clickable-link {
         margin-top: 50px; } }
     .ticket-summary .ticket-summary-item .ticket-clickable-link i {
-      width: 87px;
       font-size: 87px;
       margin-right: 18px;
       align-self: center; }
-      @media (min-width: 768px) and (max-width: 1199.98px) {
+      @media (min-width: 576px) and (max-width: 1199.98px) {
         .ticket-summary .ticket-summary-item .ticket-clickable-link i {
           margin-left: 50%;
           transform: translateX(-50%);
           margin-bottom: 20px; } }
-      @media (max-width: 576px) {
+      @media (max-width: 575.98px) {
         .ticket-summary .ticket-summary-item .ticket-clickable-link i {
           font-size: 50px;
           margin-right: 14px; } }
