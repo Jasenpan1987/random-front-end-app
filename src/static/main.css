@@ -4,7 +4,7 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: border-box; }
 
 *html {
   font-size: 10px; }
@@ -91,11 +91,7 @@ body {
   flex-wrap: wrap;
   /* row left start*/ }
   .header-top-row-container .brand-logo-wrapper {
-    order: 1;
-    width: 60%; }
-    @media (min-width: 767.98px) and (max-width: 991.98px) {
-      .header-top-row-container .brand-logo-wrapper {
-        width: 40%; } }
+    order: 1; }
     .header-top-row-container .brand-logo-wrapper img {
       width: 275px;
       height: 74px; }
@@ -109,6 +105,7 @@ body {
           height: 46px; } }
   .header-top-row-container .sell-tickets-link {
     order: 2;
+    justify-self: flex-end;
     background-color: #039be5;
     color: #fff;
     width: 187px;
@@ -179,37 +176,106 @@ body {
   @media (max-width: 767.98px) {
     .search-container {
       margin-top: 57px; } }
-  .search-container input:active, .search-container input:focus {
-    outline: none;
-    box-shadow: none; }
-  .search-container input::placeholder {
-    font-style: italic;
-    color: #b7bdc4; }
-  .search-container input[type='text'] {
+  .search-container input {
+    border: none;
     display: inline-block;
-    height: 60px;
+    height: 100px;
     padding: 20px 30px;
     font-size: 25px;
     border-radius: 10px; }
     @media (max-width: 767.98px) {
-      .search-container input[type='text'] {
-        height: 30px;
+      .search-container input {
+        height: 72px;
         padding: 10px 10px;
         font-size: 20px; } }
-    .search-container input[type='text'] + .input-group-append > span {
+    .search-container input:active, .search-container input:focus {
+      outline: none;
+      box-shadow: none; }
+    .search-container input::placeholder {
+      font-style: italic;
+      color: #b7bdc4; }
+    .search-container input + .input-group-append > span {
       padding-right: 30px;
+      border: none;
       background-color: #fff;
       font-size: 30px;
       color: #039be5;
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px; }
       @media (max-width: 767.98px) {
-        .search-container input[type='text'] + .input-group-append > span {
+        .search-container input + .input-group-append > span {
           font-size: 20px;
           padding-right: 10px; } }
 
 /* search-container ended*/
 /* header ended */
+.main-section {
+  padding: 48px 150px; }
+  @media (min-width: 767.98px) and (max-width: 991.98px) {
+    .main-section {
+      padding: 15px 28px; } }
+  @media (max-width: 576px) {
+    .main-section {
+      padding: 15px 18px; } }
+
+/* hot-events section start */
+.h2-text {
+  width: 100%;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 40px; }
+
+.hot-events {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  @media (max-width: 576px) {
+    .hot-events {
+      justify-content: center; } }
+  .hot-events .feature-item {
+    width: 263px;
+    height: 211px;
+    border: none;
+    text-align: center;
+    overflow: hidden;
+    background-color: #dfe2e6;
+    margin-bottom: 30px; }
+    @media (max-width: 1199.98px) {
+      .hot-events .feature-item {
+        width: 226px;
+        height: 181px; } }
+    @media (max-width: 576px) {
+      .hot-events .feature-item {
+        width: 290px;
+        height: 232px; } }
+    .hot-events .feature-item .feature-item-img-container {
+      width: 263px;
+      height: 151px; }
+      @media (max-width: 1199.98px) {
+        .hot-events .feature-item .feature-item-img-container {
+          width: 226px;
+          height: 130px; } }
+      @media (max-width: 576px) {
+        .hot-events .feature-item .feature-item-img-container {
+          width: 290px;
+          height: 166px; } }
+    .hot-events .feature-item img {
+      width: 100%;
+      height: 100%; }
+    .hot-events .feature-item .card-body {
+      color: #212529;
+      background: #dfe2e6;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .hot-events .feature-item .card-body .card-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 0; }
+
+/* hot-events section ended */
 /* new design ended*/
 /* header-top-rows ended */
 .footer {

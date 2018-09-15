@@ -1,16 +1,15 @@
 <!-- Begin Hot Events Include -->
-<div class="container" style="padding: 10px 0; text-align:center;">
-    <div style="width: 350px; height: 47px; font-size: 35px; font-weight: bold; color: #212529;">Hot events</div>
-    <% const SAMPLE_CONTENT = require("config/feature-content.json") %>
-    <% SAMPLE_CONTENT.features[0].categories.forEach(function(category) { %>
-        <% category.shows.slice(0,3).forEach(function(show) { %>
-            <div class="feature-item card">
-                <img src="<%= show.links.image %>" alt="<%= show.name %>" class="card-img-top" />
-                <div class="card-body">
-                    <div class="card-title"><%= show.name %></div>
-                </div>
+<% const SAMPLE_CONTENT = require("config/feature-content.json") %>
+<% SAMPLE_CONTENT.features[0].categories.forEach(function(category) { %>
+    <% category.shows.slice(0,3).forEach(function(show) { %>
+        <div class="feature-item card">
+            <div class="feature-item-img-container">
+                <img src="<%= show.links.image %>" alt="<%= show.name %>" class="card-img-top"  />
             </div>
-        <%}); %>
+            <div class="card-body">
+                <div class="card-title"><%= show.name %></div>
+            </div>
+        </div>
     <%}); %>
-</div>
+<%}); %>
 <!-- End Hot Events Include -->
