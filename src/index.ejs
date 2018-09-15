@@ -66,6 +66,41 @@
         </section>
         <!-- Hot events section ended -->
       </div>
+
+      <div class="ticket-summary" style="background-image:url(<%- require("./static/images/ticket-summary.jpg") %>);background-size: cover;">
+        <h2 class="h2-text text-white">Sell your tickets in 3 easy steps</h2>
+
+
+        <div class="row ticket-summary-item-wrapper">
+            <div class="col-md-4 ticket-summary-item">
+                <a href="<%= projectConfig.endpoints.listingsEndpoint %>" class="ticket-clickable-link">
+                    <i class="fa fa-ticket rotate45"></i>
+                    <div class="ticket-summary-text">
+                        <h3 class="ticket-summary-item-title">List your tickets</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque laoreet malesuada tortor</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 ticket-summary-item">
+                <a href="<%= projectConfig.endpoints.purchase %>" class="ticket-clickable-link">
+                    <i class="fa fa-check"></i>
+                    <div class="ticket-summary-text">
+                        <h3 class="ticket-summary-item-title">Sell your tickets</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque laoreet malesuada tortor</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 ticket-summary-item">
+                <a href="#" class="ticket-clickable-link">
+                    <i class="fa fa-usd"></i>
+                    <div class="ticket-summary-text">
+                        <h3 class="ticket-summary-item-title">Get paid!</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque laoreet malesuada tortor</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+      </div>
       
       
       
