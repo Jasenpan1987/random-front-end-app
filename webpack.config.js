@@ -54,6 +54,16 @@ module.exports = {
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
       'Access-Control-Allow-Headers':
         'X-Requested-With, content-type, Authorization'
+    },
+    proxy: {
+      '/listings/*': {
+        target: 'https://dev.marketplace.teg.technology',
+        changeOrigin: true
+      },
+      '/proxy/api/*': {
+        target: 'https://dev.marketplace.teg.technology',
+        changeOrigin: true
+      }
     }
   },
   entry: {

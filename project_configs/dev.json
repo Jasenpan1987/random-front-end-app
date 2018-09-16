@@ -1,15 +1,15 @@
 {
-  "endpoints" : {
-    "login" : "/listings/login?redirectUrl=/&isAbsolute=true",
-    "listings" : "/listings",
-    "purchase" : "/purchase"
+  "endpoints": {
+    "login": "/listings/login?redirectUrl=/&isAbsolute=true",
+    "listings": "/listings",
+    "purchase": "/purchase"
   },
-  "firebase" : {
-    "apiKey" : "AIzaSyBMmSWwJRFgTpQJQ7co_CHDHypoWmmVkUY",
-    "authDomain" : "teg-immensely-glowing-chimp.firebaseapp.com",
-    "databaseURL" : "https://teg-immensely-glowing-chimp.firebaseio.com",
-    "projectId" : "teg-immensely-glowing-chimp",
-    "storageBucket" : "",
-    "messagingSenderId" : "414195969861"
+  "firebase": {
+    "apiKey": "AIzaSyCrmqzVnqmvC-e0fCrDobv0_ZgRdQAHhRI",
+    "authDomain": "marketplace-handy-ghost.firebaseapp.com",
+    "databaseURL": "https://marketplace-handy-ghost.firebaseio.com",
+    "projectId": "marketplace-handy-ghost",
+    "storageBucket": "marketplace-handy-ghost.appspot.com",
+    "messagingSenderId": "1094332825815"
   }
 }
