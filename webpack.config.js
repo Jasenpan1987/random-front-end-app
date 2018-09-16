@@ -60,6 +60,10 @@ module.exports = {
         target: 'https://dev.marketplace.teg.technology',
         changeOrigin: true
       },
+      '/purchase/*': {
+        target: 'https://dev.marketplace.teg.technology',
+        changeOrigin: true
+      },
       '/proxy/api/*': {
         target: 'https://dev.marketplace.teg.technology',
         changeOrigin: true
