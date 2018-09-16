@@ -23,7 +23,7 @@ if (!firebase.apps.length) {
 
     firebase.auth().onIdTokenChanged(user => {
       if (user && !user.isAnonymous) {
-        $('#user-nav-menu').show();
+        $('#user-nav-menu').css('visibility', 'visible');
         $('#headerSigninBtn')
           .attr('href', '')
           .text(user.displayName.split(' ')[0]);
@@ -64,7 +64,7 @@ if (!firebase.apps.length) {
           firebase.auth().signOut();
         });
       } else {
-        $('#user-nav-menu').hide();
+        $('#user-nav-menu').css('visibility', 'hidden');
         $('#headerSigninBtn').html('Sign In/Sign Up');
         $('#headerSigninBtn').attr('href', loginUrl);
       }
