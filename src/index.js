@@ -26,7 +26,7 @@ if (!firebase.apps.length) {
         $('#user-nav-menu').show();
         $('#headerSigninBtn')
           .attr('href', '')
-          .text(user.displayName);
+          .text(user.displayName.split(' ')[0]);
 
         $('#headerSigninBtn')
           .siblings()
