@@ -67,8 +67,16 @@ body {
 .header-content {
   padding: 78px 150px 95px 150px;
 
-  @media (min-width: $bp-sm-start) and (max-width: $bp-md-end) {
+  @media (min-width: $bp-lg-start) and (max-width: $bp-lg-end) {
+    padding: 68px 100px 75px 100px;
+  }
+
+  @media (min-width: $bp-md-start) and (max-width: $bp-md-end) {
     padding: 54px 40px 57px 40px;
+  }
+
+  @media (min-width: $bp-sm-start) and (max-width: $bp-sm-end) {
+    padding: 54px 30px 57px 30px;
   }
 
   @media (max-width: $bp-xs-end) {
@@ -145,8 +153,8 @@ body {
     align-items: center;
     margin-left: 40px;
     padding-left: 15px;
-    border-top-left-radius: 8%;
-    border-top-right-radius: 8%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 
     & * {
       font-size: 15px;
@@ -198,10 +206,22 @@ body {
         width: 200px;
         background-color: white;
         border: 1px solid #e1e2e4;
-        border-bottom-left-radius: 5%;
-        border-bottom-right-radius: 5%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
         z-index: 100;
+        // $bp-xs-end: 575.98px;
+        // $bp-sm-start: 576px;
+        // $bp-sm-end: 767.98px;
+        // $bp-md-start: 768px;
+        // $bp-md-end: 991.98px;
+        // $bp-lg-start: 992px;
+        // $bp-lg-end: 1199.98px;
+        // $bp-xl-start: 1200px;
         // ipad
+        @media (min-width: $bp-lg-start) and (max-width: $bp-lg-end) {
+          right: 100px;
+          top: 125px;
+        }
         @media (min-width: $bp-md-start) and (max-width: $bp-md-end) {
           right: 40px;
           top: 104px;
@@ -367,7 +387,6 @@ body {
 }
 /* hot-events section start */
 .h2-text {
-  width: 100%;
   font-size: 35px;
   font-weight: bold;
   margin-bottom: 40px;
@@ -379,7 +398,11 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
 
-  @media (max-width: $bp-sm-start) {
+  @media (min-width: $bp-sm-start) and (max-width: $bp-sm-end) {
+    justify-content: space-evenly;
+  }
+
+  @media (max-width: $bp-xs-end) {
     justify-content: center;
   }
 
@@ -482,20 +505,38 @@ body {
         margin-top: 50px;
       }
       i {
+        width: 87px;
+        height: 87px;
         font-size: 87px;
         margin-right: 18px;
         align-self: center;
 
-        @media (min-width: $bp-sm-start) and (max-width: $bp-lg-end) {
+        @media (min-width: $bp-lg-start) and (max-width: $bp-lg-end) {
           margin-left: 50%;
           transform: translateX(-50%);
           margin-bottom: 20px;
         }
 
-        // @media (max-width: $bp-xs-end) {
-        // }
+        @media (min-width: $bp-md-start) and (max-width: $bp-md-end) {
+          width: 65px;
+          height: 65px;
+          font-size: 65px;
+          margin-left: 50%;
+          transform: translateX(-50%);
+          margin-bottom: 20px;
+        }
+
+        @media (min-width: $bp-sm-start) and (max-width: $bp-sm-end) {
+          width: 60px;
+          height: 60px;
+          font-size: 60px;
+          margin-left: 50%;
+          transform: translateX(-50%);
+          margin-bottom: 20px;
+        }
 
         @media (max-width: $bp-xs-end) {
+          height: 50px;
           font-size: 50px;
           margin-right: 14px;
         }
@@ -525,6 +566,11 @@ body {
 
         @media (min-width: $bp-md-start) and (max-width: $bp-lg-end) {
           font-size: 12px;
+          text-align: center;
+        }
+
+        @media (min-width: $bp-sm-start) and (max-width: $bp-sm-end) {
+          font-size: 14px;
           text-align: center;
         }
 
