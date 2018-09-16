@@ -23,15 +23,18 @@ if (!firebase.apps.length) {
 
     firebase.auth().onIdTokenChanged(user => {
       if (user && !user.isAnonymous) {
-        $('#user-nav-menu').css('visibility', 'visible');
-        $('#headerSigninBtn')
-          .attr('href', '')
-          .text(user.displayName.split(' ')[0]);
+        $('#loginMenu').css('display', 'none');
+        $('#userMenu').css('display', 'block');
+        // $('#user-nav-menu').css('visibility', 'visible');
 
-        $('#headerSigninBtn')
-          .siblings()
-          .removeClass('d-none')
-          .addClass('d-block');
+        $('#userNameButton')
+          .attr('href', '')
+          .text(user.displayName);
+
+        // $('#headerSigninBtn')
+        //   .siblings()
+        //   .removeClass('d-none')
+        //   .addClass('d-block');
         // $('#headerSigninBtn + i')
         //   .removeClass('d-none')
         //   .addClass('d-block');
@@ -64,9 +67,11 @@ if (!firebase.apps.length) {
           firebase.auth().signOut();
         });
       } else {
-        $('#user-nav-menu').css('visibility', 'hidden');
-        $('#headerSigninBtn').html('Sign In/Sign Up');
-        $('#headerSigninBtn').attr('href', loginUrl);
+        $('#loginMenu').css('display', 'block');
+        $('#userMenu').css('display', 'none');
+        // $('#user-nav-menu').css('visibility', 'hidden');
+        // $('#headerSigninBtn').html('Sign In/Sign Up');
+        // $('#headerSigninBtn').attr('href', loginUrl);
       }
     });
 

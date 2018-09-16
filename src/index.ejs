@@ -19,21 +19,54 @@
                 </div>
                 
                 <a href="<%= projectConfig.endpoints.listings %>" class="btn btn-primary sell-tickets-link">SELL YOUR TICKETS</a>
-                <li class="dropdown-item dropdown">
-                        <a class="dropdown-toggle" id="dropdown2-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown2.1</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown2-1">
-                            <li class="dropdown-item" href="#"><a>Action 2.1 A</a></li>
-                            <li class="dropdown-item" href="#"><a>Action 2.1 B</a></li>
-                            <li class="dropdown-item" href="#"><a>Action 2.1 C</a></li>
-                            
-                        </ul>
-                    </li>
-                <!--<div class="header-dropdown">
-                    <i class="fa fa-user-circle fa-lg d-none"></i>
-                    <a href="<%= projectConfig.endpoints.login %>" target="_self" class="header-login-text" id="headerSigninBtn">
+                
+                <div class="header-dropdown" id="loginMenu">
+                    <a href="<%= projectConfig.endpoints.login %>" target="_self" class="header-login-text">
                         Login Or Signup
                     </a>
-                    <i class="fa fa-chevron-down d-none"></i>
+                </div>
+
+                <!-- this section will be displayed if user is signed in -->
+                <div class="header-dropdown dropdown" id="userMenu">
+                    <a href="" id="userDetailDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-menu-toggler">
+                        <i class="fa fa-user-circle fa-lg user-icon-left"></i>
+                        <span id="userNameButton"></span>
+                        <i class="fa fa-chevron-down user-icon-right"></i>
+                    </a>
+                    <ul class="dropdown-menu header-dropdown-menu" aria-labelledby="userDetailDropdown">
+                        <li class="dropdown-item">
+                            <i class="fa fa-ticket"></i>
+                            <a href="<%= projectConfig.endpoints.purchase %>" target="_self">
+                                Purchased Tickets
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <i class="fa fa-align-justify"></i>
+                            <a href="<%= projectConfig.endpoints.listings %>" target="_self">
+                                Current Listings
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <i class="fa fa-history"></i>
+                            <a href="<%= projectConfig.endpoints.listings %>" target="_self" >
+                                Listing History
+                            </a>
+                        </li>                            
+                        <li class="dropdown-item">
+                            <i class="fa fa-user"></i>
+                            <a href="#" target="_self" >
+                                Account Details
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <i class="fa fa-sign-out"></i>
+                            <a href="#" target="_self" id="sign-out-btn">
+                                Sign Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+<!--
                     <div class="header-dropdown-container">
                         <ul class="header-dropdown-content" id="user-nav-menu"> 
                             <li>
