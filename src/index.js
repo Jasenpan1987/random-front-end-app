@@ -13,6 +13,8 @@ require('firebase/auth');
 
 // Initialize firebase before we finish loading
 if (!firebase.apps.length) {
+  $('#loginMenu').css('display', 'none');
+
   firebase.initializeApp(projectConfig.firebase);
 }
 
@@ -23,25 +25,10 @@ if (!firebase.apps.length) {
 
     firebase.auth().onIdTokenChanged(user => {
       if (user && !user.isAnonymous) {
-        $('#loginMenu').css('display', 'none');
-        $('#userMenu').css('display', 'block');
-        // $('#user-nav-menu').css('visibility', 'visible');
-
         $('#userNameButton')
           .attr('href', '')
           .text(user.displayName);
-
-        // $('#headerSigninBtn')
-        //   .siblings()
-        //   .removeClass('d-none')
-        //   .addClass('d-block');
-        // $('#headerSigninBtn + i')
-        //   .removeClass('d-none')
-        //   .addClass('d-block');
-
-        // $('#headerSigninBtn + a')
-        //   .removeClass('d-none')
-        //   .addClass('d-block');
+        $('#userMenu').css('display', 'block');
 
         const accessToken = user._lat;
 
