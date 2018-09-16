@@ -23,6 +23,7 @@ if (!firebase.apps.length) {
 
     firebase.auth().onIdTokenChanged(user => {
       if (user && !user.isAnonymous) {
+        $('#user-nav-menu').show();
         $('#headerSigninBtn')
           .attr('href', '')
           .text(user.displayName);
@@ -38,10 +39,6 @@ if (!firebase.apps.length) {
         // $('#headerSigninBtn + a')
         //   .removeClass('d-none')
         //   .addClass('d-block');
-
-        $('#ddlSigninBtn')
-          .html('Sign Out')
-          .attr('href', '');
 
         const accessToken = user._lat;
 
@@ -63,14 +60,13 @@ if (!firebase.apps.length) {
           error: function() {}
         });
 
-        $('#ddlSigninBtn').click(() => {
+        $('#sign-out-btn').click(() => {
           firebase.auth().signOut();
         });
       } else {
-        $('#signinBtn').html('Sign In/Sign Up');
-        $('#ddlSigninBtn').html('Sign In/Sign Up');
+        $('#user-nav-menu').hide();
+        $('#headerSigninBtn').html('Sign In/Sign Up');
         $('#headerSigninBtn').attr('href', loginUrl);
-        $('#ddlSigninBtn').attr('href', loginUrl);
       }
     });
 
